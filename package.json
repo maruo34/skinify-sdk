@@ -9,6 +9,10 @@
     "publish": "npm run build & npm publish",
     "dev": "nodemon --exec ts-node -- ./src/index.ts"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maruo34/skinify-sdk.git"
+  },
   "keywords": [
     "skinify",
     "sdk",
@@ -17,7 +21,12 @@
     "csgo",
     "dota2"
   ],
+  "author": "maruo34",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maruo34/skinify-sdk/issues"
+  },
+  "homepage": "https://github.com/maruo34/skinify-sdk",
   "dependencies": {
     "axios": "^0.21.1",
     "crypto": "^1.0.1",
