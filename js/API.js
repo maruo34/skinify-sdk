@@ -14,41 +14,41 @@ class API {
         this.getCurrencies = () => {
             return this.axios.post('', { method: types_1.API_METHODS.GET_CURRENCIES });
         };
-        this.getOrders = ({ starting, ending }) => {
-            return this.axios.post('', { starting, ending, method: types_1.API_METHODS.GET_ORDERS });
+        this.getOrders = ({ starting, ending, }) => {
+            return this.axios.post(types_1.API_METHODS.GET_ORDERS, { starting, ending });
         };
         this.getOrderStatusByTransactionId = (transaction_id) => {
-            return this.axios.post('', { transaction_id, method: types_1.API_METHODS.GET_ORDER_STATUS });
+            return this.axios.post(types_1.API_METHODS.GET_ORDER_STATUS, { transaction_id });
         };
-        this.getOrderStatusByOrderId = (order_id) => {
-            return this.axios.post('', { order_id, method: types_1.API_METHODS.GET_ORDER_STATUS });
+        this.getOrderStatusByOrderId = (deposit_id) => {
+            return this.axios.post(types_1.API_METHODS.GET_ORDER_STATUS, { deposit_id });
         };
-        this.createOrder = (order_id) => {
-            return this.axios.post('', { order_id, method: types_1.API_METHODS.CREATE_ORDER });
+        this.createOrder = (deposit_id) => {
+            return this.axios.post(types_1.API_METHODS.CREATE_ORDER, { deposit_id });
         };
         this.serverStatus = () => {
-            return this.axios.post('', { method: types_1.API_METHODS.GET_SERVER_STATUS });
+            return this.axios.post(types_1.API_METHODS.GET_SERVER_STATUS);
         };
         this.getErrorCallbackList = () => {
-            return this.axios.post('', { method: types_1.API_METHODS.GET_ERROR_CALLBACK_ERROR_LIST });
+            return this.axios.post(types_1.API_METHODS.GET_ERROR_CALLBACK_ERROR_LIST);
         };
         this.getMarketPriceList = (game = 'csgo') => {
-            return this.axios.post('', { game, method: types_1.API_METHODS.GET_MARKET_PRICE_LIST });
+            return this.axios.post(types_1.API_METHODS.GET_MARKET_PRICE_LIST, { game });
         };
         this.findItemsByName = (name, game = 'csgo') => {
-            return this.axios.post('', { name, game, method: types_1.API_METHODS.SEARCH_ITEMS });
+            return this.axios.post(types_1.API_METHODS.SEARCH_ITEMS, { name, game });
         };
         this.buyItemByNameAndSendToUser = (data) => {
-            return this.axios.post('', { ...data, method: types_1.API_METHODS.BUY_ITEM_AND_SEND });
+            return this.axios.post(types_1.API_METHODS.BUY_ITEM_AND_SEND, { ...data });
         };
         this.buyItemByIdAndSendToUser = (data) => {
-            return this.axios.post('', { ...data, method: types_1.API_METHODS.BUY_ITEM_AND_SEND });
+            return this.axios.post(types_1.API_METHODS.BUY_ITEM_AND_SEND, { ...data });
         };
         this.getInfoAboutBoughtItem = (buy_id) => {
-            return this.axios.post('', { buy_id, method: types_1.API_METHODS.GET_INFO_ABOUT_BOUGHT_ITEM });
+            return this.axios.post(types_1.API_METHODS.GET_INFO_ABOUT_BOUGHT_ITEM, { buy_id });
         };
-        this.getBoughtItemsHistory = ({ starting, ending }) => {
-            return this.axios.post('', { starting, ending, method: types_1.API_METHODS.GET_INFO_ABOUT_BOUGHT_ITEM });
+        this.getBoughtItemsHistory = ({ starting, ending, }) => {
+            return this.axios.post(types_1.API_METHODS.GET_INFO_ABOUT_BOUGHT_ITEM, { starting, ending });
         };
         this.config = apiConfig;
         this.axios = axios_1.default.create({

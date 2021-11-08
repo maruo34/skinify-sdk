@@ -1,4 +1,4 @@
 node_modules
 .idea
-
+prettier.config.js
 *.d.ts
