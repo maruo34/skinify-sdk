@@ -4,6 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const axios_1 = __importDefault(require("axios"));
+const qs_1 = __importDefault(require("qs"));
 const defaultConfig_1 = require("./defaultConfig");
 const types_1 = require("./types");
 class API {
@@ -24,7 +25,11 @@ class API {
             return this.axios.post(types_1.API_METHODS.GET_ORDER_STATUS, { deposit_id });
         };
         this.createOrder = (deposit_id) => {
-            return this.axios.post(types_1.API_METHODS.CREATE_ORDER, { deposit_id });
+            return this.axios.post(types_1.API_METHODS.CREATE_ORDER, qs_1.default.stringify({ deposit_id }), {
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+            });
         };
         this.serverStatus = () => {
             return this.axios.post(types_1.API_METHODS.GET_SERVER_STATUS);

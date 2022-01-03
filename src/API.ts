@@ -1,4 +1,5 @@
 import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios';
+import qs from 'qs';
 import { API_URL } from './defaultConfig';
 import {
   API_METHODS,
@@ -86,7 +87,11 @@ class API {
   };
 
   public createOrder = (deposit_id: number): Promise<CreateOrderResponse> => {
-    return this.axios.post(API_METHODS.CREATE_ORDER, { deposit_id });
+    return this.axios.post(API_METHODS.CREATE_ORDER, qs.stringify({ deposit_id }), {
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+    });
   };
 
   public serverStatus = (): Promise<ServerStatusResponse> => {
